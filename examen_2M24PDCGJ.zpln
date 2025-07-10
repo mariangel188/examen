@@ -1,0 +1,1368 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "val dfClima = spark\n    .read\n    .option(\"header\", true)\n    .option(\"sep\", \",\")\n    .option(\"inferSchema\", true)\n    .csv(\"/workspace/examen/weatherHistory.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:01+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdfClima\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [Formatted Date: timestamp, Summary: string ... 10 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=0",
+              "$$hashKey": "object:2629"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=1",
+              "$$hashKey": "object:2630"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128685_1204124202",
+      "id": "paragraph_1752106456932_340156986",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:332",
+      "dateFinished": "2025-07-10T01:49:20+0000",
+      "dateStarted": "2025-07-10T01:49:01+0000"
+    },
+    {
+      "text": "print(s\"Registros(filas): ${dfClima.count}, Variables (columnas): ${dfClima.columns.length}\")",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:20+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Registros(filas): 96453, Variables (columnas): 12"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=2",
+              "$$hashKey": "object:2676"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=3",
+              "$$hashKey": "object:2677"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128686_1291053156",
+      "id": "paragraph_1752106478740_1255176839",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:333",
+      "dateFinished": "2025-07-10T01:49:21+0000",
+      "dateStarted": "2025-07-10T01:49:20+0000"
+    },
+    {
+      "text": "dfClima.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:21+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- Formatted Date: timestamp (nullable = true)\n |-- Summary: string (nullable = true)\n |-- Precip Type: string (nullable = true)\n |-- Temperature (C): double (nullable = true)\n |-- Apparent Temperature (C): double (nullable = true)\n |-- Humidity: double (nullable = true)\n |-- Wind Speed (km/h): double (nullable = true)\n |-- Wind Bearing (degrees): double (nullable = true)\n |-- Visibility (km): double (nullable = true)\n |-- Loud Cover: double (nullable = true)\n |-- Pressure (millibars): double (nullable = true)\n |-- Daily Summary: string (nullable = true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128686_1815751818",
+      "id": "paragraph_1752107150914_345189929",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:334",
+      "dateFinished": "2025-07-10T01:49:22+0000",
+      "dateStarted": "2025-07-10T01:49:21+0000"
+    },
+    {
+      "text": "import org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\n\nval numericCols = dfClima.schema.fields.filter {\n  case StructField(_, IntegerType | LongType | FloatType | DoubleType | ShortType | DecimalType(), _, _) => true\n  case _ => false\n}.map(_.name)",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:22+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\n\u001b[1m\u001b[34mnumericCols\u001b[0m: \u001b[1m\u001b[32mArray[String]\u001b[0m = Array(Temperature (C), Apparent Temperature (C), Humidity, Wind Speed (km/h), Wind Bearing (degrees), Visibility (km), Loud Cover, Pressure (millibars))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128686_1190825910",
+      "id": "paragraph_1752106727262_1421728093",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:335",
+      "dateFinished": "2025-07-10T01:49:22+0000",
+      "dateStarted": "2025-07-10T01:49:22+0000"
+    },
+    {
+      "text": "dfClima.select(numericCols.map(col): _*).describe().show",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:22+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+-------------------+------------------------+-------------------+------------------+----------------------+------------------+----------+--------------------+\n|summary|    Temperature (C)|Apparent Temperature (C)|           Humidity| Wind Speed (km/h)|Wind Bearing (degrees)|   Visibility (km)|Loud Cover|Pressure (millibars)|\n+-------+-------------------+------------------------+-------------------+------------------+----------------------+------------------+----------+--------------------+\n|  count|              96453|                   96453|              96453|             96453|                 96453|             96453|     96453|               96453|\n|   mean| 11.932678437511868|      10.855028874166726| 0.7348989663358906|10.810640140793208|    187.50923247592092|10.347324929237148|       0.0|  1003.2359558541606|\n| stddev|   9.55154632065698|       10.69684739211911|0.19547273906721474| 6.913571012591965|    107.38342838070518| 4.192123191422759|       0.0|   116.9699056825797|\n|    min|-21.822222222222223|     -27.716666666666665|                0.0|               0.0|                   0.0|               0.0|       0.0|                 0.0|\n|    max|  39.90555555555555|       39.34444444444444|                1.0|63.852599999999995|                 359.0|              16.1|       0.0|             1046.38|\n+-------+-------------------+------------------------+-------------------+------------------+----------------------+------------------+----------+--------------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=4",
+              "$$hashKey": "object:2783"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=5",
+              "$$hashKey": "object:2784"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128687_23847470",
+      "id": "paragraph_1752106834823_67739129",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:336",
+      "dateFinished": "2025-07-10T01:49:24+0000",
+      "dateStarted": "2025-07-10T01:49:22+0000"
+    },
+    {
+      "text": "dfClima.select(numericCols.map(col): _*).summary(\"stddev\", \"25%\").show",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:24+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+-----------------+------------------------+-------------------+-----------------+----------------------+-----------------+----------+--------------------+\n|summary|  Temperature (C)|Apparent Temperature (C)|           Humidity|Wind Speed (km/h)|Wind Bearing (degrees)|  Visibility (km)|Loud Cover|Pressure (millibars)|\n+-------+-----------------+------------------------+-------------------+-----------------+----------------------+-----------------+----------+--------------------+\n| stddev| 9.55154632065698|       10.69684739211911|0.19547273906721474|6.913571012591965|    107.38342838070518|4.192123191422759|       0.0|   116.9699056825797|\n|    25%|4.688888888888887|       2.311111111111109|                0.6|5.828200000000001|                 116.0|           8.3398|       0.0|              1011.9|\n+-------+-----------------+------------------------+-------------------+-----------------+----------------------+-----------------+----------+--------------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=6",
+              "$$hashKey": "object:2834"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=7",
+              "$$hashKey": "object:2835"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128687_1707692127",
+      "id": "paragraph_1752107049431_1615859466",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:337",
+      "dateFinished": "2025-07-10T01:49:26+0000",
+      "dateStarted": "2025-07-10T01:49:24+0000"
+    },
+    {
+      "text": "dfClima.select(numericCols.map(col): _*).summary(\"count\", \"count_distinct\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:26+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------+---------------+------------------------+--------+-----------------+----------------------+---------------+----------+--------------------+\n|       summary|Temperature (C)|Apparent Temperature (C)|Humidity|Wind Speed (km/h)|Wind Bearing (degrees)|Visibility (km)|Loud Cover|Pressure (millibars)|\n+--------------+---------------+------------------------+--------+-----------------+----------------------+---------------+----------+--------------------+\n|         count|          96453|                   96453|   96453|            96453|                 96453|          96453|     96453|               96453|\n|count_distinct|           7574|                    8984|      90|             2484|                   360|            949|         1|                4979|\n+--------------+---------------+------------------------+--------+-----------------+----------------------+---------------+----------+--------------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=8",
+              "$$hashKey": "object:2900"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=9",
+              "$$hashKey": "object:2901"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=10",
+              "$$hashKey": "object:2902"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128687_1054201776",
+      "id": "paragraph_1752107064058_556368216",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:338",
+      "dateFinished": "2025-07-10T01:49:28+0000",
+      "dateStarted": "2025-07-10T01:49:26+0000"
+    },
+    {
+      "text": "dfClima.select(max(\"Temperature (C)\"), min(\"Temperature (C)\")).show()\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:28+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+--------------------+\n|max(Temperature (C))|min(Temperature (C))|\n+--------------------+--------------------+\n|   39.90555555555555| -21.822222222222223|\n+--------------------+--------------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=11",
+              "$$hashKey": "object:2956"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=12",
+              "$$hashKey": "object:2957"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128687_1180123070",
+      "id": "paragraph_1752111132041_890628712",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:339",
+      "dateFinished": "2025-07-10T01:49:29+0000",
+      "dateStarted": "2025-07-10T01:49:28+0000"
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:29+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128687_408862942",
+      "id": "paragraph_1752110928130_1919950386",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:340"
+    },
+    {
+      "text": "val dateCols = dfClima.schema.fields.collect {\n  case StructField(name, DateType, _, _) => name\n}",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:29+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdateCols\u001b[0m: \u001b[1m\u001b[32mArray[String]\u001b[0m = Array()\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128687_1278276415",
+      "id": "paragraph_1752108086944_108194619",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:341",
+      "dateFinished": "2025-07-10T01:49:29+0000",
+      "dateStarted": "2025-07-10T01:49:29+0000"
+    },
+    {
+      "text": "dfClima.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:29+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- Formatted Date: timestamp (nullable = true)\n |-- Summary: string (nullable = true)\n |-- Precip Type: string (nullable = true)\n |-- Temperature (C): double (nullable = true)\n |-- Apparent Temperature (C): double (nullable = true)\n |-- Humidity: double (nullable = true)\n |-- Wind Speed (km/h): double (nullable = true)\n |-- Wind Bearing (degrees): double (nullable = true)\n |-- Visibility (km): double (nullable = true)\n |-- Loud Cover: double (nullable = true)\n |-- Pressure (millibars): double (nullable = true)\n |-- Daily Summary: string (nullable = true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128687_1359224600",
+      "id": "paragraph_1752108260366_1912437503",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:342",
+      "dateFinished": "2025-07-10T01:49:29+0000",
+      "dateStarted": "2025-07-10T01:49:29+0000"
+    },
+    {
+      "text": "val dfClimaClean = dfClima\n  .withColumn(\"fecha\", to_date(col(\"Formatted Date\"), \"yyyy/MM/dd\"))",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:29+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdfClimaClean\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [Formatted Date: timestamp, Summary: string ... 11 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128688_2120183154",
+      "id": "paragraph_1752108587927_1557701898",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:343",
+      "dateFinished": "2025-07-10T01:49:30+0000",
+      "dateStarted": "2025-07-10T01:49:29+0000"
+    },
+    {
+      "text": "dfClimaClean.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:30+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- Formatted Date: timestamp (nullable = true)\n |-- Summary: string (nullable = true)\n |-- Precip Type: string (nullable = true)\n |-- Temperature (C): double (nullable = true)\n |-- Apparent Temperature (C): double (nullable = true)\n |-- Humidity: double (nullable = true)\n |-- Wind Speed (km/h): double (nullable = true)\n |-- Wind Bearing (degrees): double (nullable = true)\n |-- Visibility (km): double (nullable = true)\n |-- Loud Cover: double (nullable = true)\n |-- Pressure (millibars): double (nullable = true)\n |-- Daily Summary: string (nullable = true)\n |-- fecha: date (nullable = true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128688_1603297308",
+      "id": "paragraph_1752107346574_308391872",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:344",
+      "dateFinished": "2025-07-10T01:49:30+0000",
+      "dateStarted": "2025-07-10T01:49:30+0000"
+    },
+    {
+      "text": "import org.apache.spark.sql.types._\r\nimport org.apache.spark.sql.functions._\r\n\r\nval dateColsNames = dfClimaClean\r\n    .schema\r\n    .fields\r\n    .filter {\r\n        case StructField(_, TimestampType | DateType, _, _) => true\r\n        case _ => false\r\n    }.map(_.name)\r\n\r\n//  Ejemplo de cálculo de estadísticas comunes\r\nval statsExprs = dateColsNames\r\n    .flatMap { colName =>\r\n        Seq(\r\n            count(col(colName)).alias(s\"${colName}_count\"),\r\n            min(col(colName)).alias(s\"${colName}_min\"),\r\n            max(col(colName)).alias(s\"${colName}_max\"),\r\n            countDistinct(col(colName)).alias(s\"${colName}_countDistinct\")\r\n        )\r\n\r\n    }\r\nval dfStatsDateCols = dfClimaClean\r\n    .select(statsExprs: _*)\r\ndfStatsDateCols.show()",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:30+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------------------+-------------------+-------------------+----------------------------+-----------+----------+----------+-------------------+\n|Formatted Date_count| Formatted Date_min| Formatted Date_max|Formatted Date_countDistinct|fecha_count| fecha_min| fecha_max|fecha_countDistinct|\n+--------------------+-------------------+-------------------+----------------------------+-----------+----------+----------+-------------------+\n|               96453|2005-12-31 23:00:00|2016-12-31 22:00:00|                       96429|      96453|2005-12-31|2016-12-31|               4019|\n+--------------------+-------------------+-------------------+----------------------------+-----------+----------+----------+-------------------+\n\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\n\u001b[1m\u001b[34mdateColsNames\u001b[0m: \u001b[1m\u001b[32mArray[String]\u001b[0m = Array(Formatted Date, fecha)\n\u001b[1m\u001b[34mstatsExprs\u001b[0m: \u001b[1m\u001b[32mArray[org.apache.spark.sql.Column]\u001b[0m = Array(count(Formatted Date) AS `Formatted Date_count`, min(Formatted Date) AS `Formatted Date_min`, max(Formatted Date) AS `Formatted Date_max`, count(Formatted Date) AS `Formatted Date_countDistinct`, count(fecha) AS fecha_count, min(fecha) AS fecha_min, max(fecha) AS fecha_max, count(fecha) AS fecha_countDistinct)\n\u001b[1m\u001b[34mdfStatsDateCols\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [Formatted Date_count: bigint, Formatted Date_min: timestamp ... 6 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=13",
+              "$$hashKey": "object:3122"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=14",
+              "$$hashKey": "object:3123"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=15",
+              "$$hashKey": "object:3124"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128688_2004700617",
+      "id": "paragraph_1752107361181_1993067819",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:345",
+      "dateFinished": "2025-07-10T01:49:31+0000",
+      "dateStarted": "2025-07-10T01:49:30+0000"
+    },
+    {
+      "text": "// Número de registros por tipo de clima\r\nz.show(\r\n    dfClimaClean\r\n        .groupBy(\"Summary\")\r\n        .count()\r\n        .orderBy(desc(\"count\"))\r\n        .limit(10)\r\n)",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:32+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Summary": "string",
+                      "count": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "stacked": true
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "Summary",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "count",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Summary\tcount\nPartly Cloudy\t31733\nMostly Cloudy\t28094\nOvercast\t16597\nClear\t10890\nFoggy\t7148\nBreezy and Overcast\t528\nBreezy and Mostly Cloudy\t516\nBreezy and Partly Cloudy\t386\nDry and Partly Cloudy\t86\nWindy and Partly Cloudy\t67\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=16",
+              "$$hashKey": "object:3254"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=17",
+              "$$hashKey": "object:3255"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128688_1814749009",
+      "id": "paragraph_1752107556458_2126633827",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:346",
+      "dateFinished": "2025-07-10T01:49:32+0000",
+      "dateStarted": "2025-07-10T01:49:32+0000"
+    },
+    {
+      "text": "// Cómo cambia la humedad promedio por año.\r\nimport org.apache.spark.sql.functions._\r\n\r\nz.show(\r\n  dfClimaClean\r\n    .withColumn(\"anio\", year(col(\"fecha\")))\r\n    .groupBy(\"anio\")\r\n    .mean(\"Humidity\")\r\n    .withColumnRenamed(\"avg(Humidity)\", \"humedad_prom\")\r\n    .orderBy(\"anio\")\r\n)",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:32+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "scatterChart",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "anio": "string",
+                      "mes": "string",
+                      "avg(Temperature (C))": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "stacked": false
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "pieChart": {}
+              },
+              "commonSetting": {},
+              "keys": [],
+              "groups": [],
+              "values": []
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "anio\thumedad_prom\n2005\t0.89\n2006\t0.7673493150685028\n2007\t0.6896472602739773\n2008\t0.701238615664853\n2009\t0.707246575342473\n2010\t0.7968613387978182\n2011\t0.7360079908675781\n2012\t0.6895127504553799\n2013\t0.7541974885844736\n2014\t0.7485714285714387\n2015\t0.7323538812785396\n2016\t0.760867585107594\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.functions._\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=18",
+              "$$hashKey": "object:3428"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=19",
+              "$$hashKey": "object:3429"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128688_1662866984",
+      "id": "paragraph_1752108741310_1181196",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:347",
+      "dateFinished": "2025-07-10T01:49:33+0000",
+      "dateStarted": "2025-07-10T01:49:32+0000"
+    },
+    {
+      "text": "// Número de registros por cada mes del año.\r\nz.show(\r\n  dfClimaClean\r\n    .withColumn(\"mes\", month(col(\"fecha\")))\r\n    .groupBy(\"mes\")\r\n    .count()\r\n    .orderBy(\"mes\")\r\n)\r\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:33+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "pieChart",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "anio": "string",
+                      "count": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "pieChart": {}
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "mes",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "count",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "mes\tcount\n1\t8184\n2\t7464\n3\t8184\n4\t7920\n5\t8184\n6\t7920\n7\t8181\n8\t8208\n9\t7920\n10\t8184\n11\t7920\n12\t8184\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=20",
+              "$$hashKey": "object:3596"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=21",
+              "$$hashKey": "object:3597"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128688_2086108743",
+      "id": "paragraph_1752110146182_1876368904",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:348",
+      "dateFinished": "2025-07-10T01:49:34+0000",
+      "dateStarted": "2025-07-10T01:49:33+0000"
+    },
+    {
+      "text": "// Relación entre temperatura y humedad\r\nz.show(\r\n  dfClimaClean\r\n    .select(\"Temperature (C)\", \"Humidity\")\r\n    .na.drop()\r\n    .limit(500)\r\n)",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:49:34+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "scatterChart",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Temperature (C)": "string",
+                      "Humidity": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "scatterChart": {
+                  "xAxis": {
+                    "name": "Temperature (C)",
+                    "index": 0,
+                    "aggr": "sum"
+                  },
+                  "yAxis": {
+                    "name": "Humidity",
+                    "index": 1,
+                    "aggr": "sum"
+                  }
+                }
+              },
+              "keys": [
+                {
+                  "name": "Temperature (C)",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": []
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Temperature (C)\tHumidity\n9.472222222222221\t0.89\n9.355555555555558\t0.86\n9.377777777777778\t0.89\n8.28888888888889\t0.83\n8.755555555555553\t0.83\n9.222222222222221\t0.85\n7.733333333333334\t0.95\n8.77222222222222\t0.89\n10.82222222222222\t0.82\n13.77222222222222\t0.72\n16.016666666666666\t0.67\n17.144444444444446\t0.54\n17.800000000000004\t0.55\n17.333333333333332\t0.51\n18.87777777777778\t0.47\n18.911111111111115\t0.46\n15.38888888888889\t0.6\n15.550000000000002\t0.63\n14.255555555555553\t0.69\n13.144444444444442\t0.7\n11.549999999999999\t0.77\n11.183333333333334\t0.76\n10.116666666666667\t0.79\n10.2\t0.77\n10.42222222222222\t0.62\n9.911111111111113\t0.66\n11.183333333333334\t0.8\n7.155555555555556\t0.79\n6.111111111111111\t0.82\n6.788888888888888\t0.83\n7.26111111111111\t0.85\n7.799999999999999\t0.83\n9.872222222222225\t0.78\n12.222222222222221\t0.72\n15.094444444444447\t0.61\n17.355555555555558\t0.52\n19.00555555555555\t0.46\n20.04444444444444\t0.4\n21.049999999999997\t0.4\n21.18333333333333\t0.37\n20.11666666666666\t0.4\n20.216666666666665\t0.36\n20.0\t0.43\n17.800000000000004\t0.5\n16.06111111111111\t0.53\n15.02222222222222\t0.55\n14.422222222222224\t0.58\n14.255555555555553\t0.59\n13.77222222222222\t0.6\n13.283333333333331\t0.63\n8.633333333333333\t0.87\n11.25\t0.83\n11.183333333333334\t0.89\n10.694444444444445\t0.95\n11.11111111111111\t0.93\n11.11111111111111\t0.93\n12.166666666666666\t0.82\n12.755555555555556\t0.79\n13.838888888888887\t0.84\n16.183333333333334\t0.73\n17.516666666666666\t0.67\n17.383333333333333\t0.67\n17.36111111111111\t0.71\n17.205555555555556\t0.74\n15.633333333333333\t0.81\n13.577777777777776\t0.9\n10.911111111111111\t0.86\n8.800000000000002\t0.99\n8.961111111111112\t0.93\n8.199999999999998\t0.96\n7.688888888888891\t0.96\n7.766666666666664\t0.96\n8.199999999999998\t0.96\n8.177777777777777\t0.93\n7.311111111111109\t0.82\n7.644444444444442\t0.93\n6.622222222222224\t0.93\n6.683333333333334\t0.93\n6.0888888888888895\t0.93\n6.066666666666667\t0.93\n6.144444444444446\t0.93\n7.1333333333333355\t0.8\n7.205555555555555\t0.86\n7.566666666666666\t0.84\n8.900000000000002\t0.77\n9.961111111111112\t0.71\n9.888888888888888\t0.71\n11.066666666666668\t0.71\n10.116666666666667\t0.76\n11.038888888888888\t0.66\n10.65\t0.7\n10.050000000000002\t0.7\n9.899999999999999\t0.66\n8.794444444444444\t0.71\n7.827777777777779\t0.72\n7.855555555555556\t0.72\n7.316666666666667\t0.75\n7.244444444444444\t0.75\n5.438888888888888\t0.88\n7.200000000000001\t0.76\n6.688888888888888\t0.7\n6.211111111111111\t0.73\n6.111111111111111\t0.76\n6.111111111111111\t0.76\n6.172222222222222\t0.76\n7.222222222222222\t0.71\n7.288888888888888\t0.73\n7.405555555555555\t0.72\n7.96111111111111\t0.7\n8.033333333333335\t0.7\n9.07777777777778\t0.65\n9.049999999999999\t0.62\n9.049999999999999\t0.65\n9.183333333333334\t0.65\n9.072222222222221\t0.7\n7.9833333333333325\t0.75\n8.072222222222223\t0.75\n7.894444444444446\t0.82\n7.311111111111109\t0.83\n7.33888888888889\t0.84\n6.622222222222224\t0.85\n6.066666666666667\t0.88\n8.338888888888887\t0.88\n5.183333333333333\t0.91\n3.7222222222222237\t0.94\n4.855555555555557\t0.93\n5.211111111111112\t0.92\n6.255555555555555\t0.92\n7.794444444444445\t0.87\n10.050000000000002\t0.76\n12.200000000000001\t0.66\n12.7\t0.63\n13.933333333333332\t0.58\n15.094444444444447\t0.59\n15.150000000000002\t0.5\n16.177777777777777\t0.44\n16.25\t0.55\n16.29444444444444\t0.5\n16.099999999999998\t0.56\n12.955555555555556\t0.68\n13.850000000000001\t0.64\n12.777777777777779\t0.69\n12.149999999999999\t0.72\n10.677777777777777\t0.81\n10.444444444444443\t0.83\n9.822222222222223\t0.8\n11.027777777777779\t0.74\n7.138888888888889\t0.93\n7.622222222222222\t0.89\n7.6277777777777755\t0.86\n7.044444444444444\t0.86\n8.599999999999998\t0.84\n9.649999999999999\t0.84\n12.105555555555554\t0.72\n12.777777777777779\t0.71\n13.81111111111111\t0.65\n16.016666666666666\t0.48\n17.127777777777776\t0.47\n17.144444444444446\t0.43\n17.77777777777778\t0.4\n17.77777777777778\t0.37\n17.805555555555557\t0.43\n16.15555555555555\t0.52\n14.049999999999999\t0.63\n13.08888888888889\t0.67\n12.288888888888888\t0.72\n12.777777777777779\t0.66\n12.727777777777776\t0.67\n12.266666666666666\t0.69\n11.71111111111111\t0.71\n10.82777777777778\t0.86\n12.200000000000001\t0.59\n12.200000000000001\t0.6\n11.688888888888888\t0.68\n11.205555555555556\t0.77\n11.133333333333333\t0.77\n11.43888888888889\t0.77\n13.033333333333335\t0.81\n17.244444444444444\t0.62\n17.73888888888889\t0.53\n17.84444444444445\t0.56\n18.86111111111111\t0.56\n18.666666666666664\t0.56\n17.82222222222222\t0.56\n17.800000000000004\t0.59\n17.349999999999998\t0.57\n16.06666666666667\t0.67\n14.933333333333334\t0.73\n13.922222222222224\t0.78\n12.755555555555556\t0.84\n12.755555555555556\t0.84\n12.372222222222225\t0.86\n11.183333333333334\t0.93\n11.666666666666666\t0.9\n8.977777777777776\t0.95\n10.577777777777776\t0.93\n10.533333333333335\t0.89\n10.58888888888889\t0.87\n9.983333333333333\t0.89\n11.022222222222224\t0.86\n13.538888888888888\t0.75\n13.88888888888889\t0.68\n15.0\t0.67\n17.183333333333334\t0.57\n16.2\t0.62\n17.75\t0.56\n18.40555555555555\t0.54\n17.82222222222222\t0.59\n17.31111111111111\t0.57\n17.505555555555553\t0.55\n17.266666666666666\t0.54\n15.13888888888889\t0.61\n13.25\t0.69\n12.294444444444444\t0.72\n10.699999999999998\t0.79\n9.855555555555558\t0.85\n9.522222222222222\t0.88\n8.405555555555557\t0.92\n13.011111111111113\t0.82\n7.733333333333334\t0.96\n6.1388888888888875\t0.96\n6.472222222222221\t0.95\n6.627777777777777\t0.96\n8.68888888888889\t0.93\n11.994444444444447\t0.81\n13.766666666666667\t0.78\n15.088888888888887\t0.77\n16.455555555555556\t0.68\n17.31111111111111\t0.62\n17.872222222222224\t0.64\n19.038888888888884\t0.47\n18.977777777777774\t0.51\n19.00555555555555\t0.55\n19.01111111111111\t0.53\n17.866666666666664\t0.64\n17.266666666666666\t0.62\n16.188888888888886\t0.61\n14.883333333333333\t0.72\n14.327777777777776\t0.75\n14.511111111111111\t0.75\n14.372222222222222\t0.75\n14.877777777777778\t0.72\n10.405555555555553\t0.92\n12.822222222222221\t0.83\n12.799999999999999\t0.85\n12.82777777777778\t0.86\n12.266666666666666\t0.85\n12.266666666666666\t0.85\n12.183333333333334\t0.82\n12.17222222222222\t0.8\n12.711111111111112\t0.83\n15.605555555555558\t0.78\n16.022222222222226\t0.78\n17.200000000000003\t0.67\n17.21666666666667\t0.71\n17.82777777777778\t0.69\n17.82777777777778\t0.69\n17.733333333333334\t0.69\n16.272222222222222\t0.71\n13.166666666666668\t0.93\n13.255555555555555\t0.93\n13.011111111111113\t0.93\n12.455555555555556\t0.91\n12.488888888888887\t0.9\n9.555555555555557\t0.8\n10.622222222222222\t0.79\n8.722222222222223\t0.93\n10.533333333333335\t0.77\n9.444444444444445\t0.83\n9.888888888888888\t0.83\n10.366666666666665\t0.78\n8.88888888888889\t0.89\n9.97777777777778\t0.84\n12.200000000000001\t0.73\n13.961111111111112\t0.67\n14.944444444444445\t0.67\n16.183333333333334\t0.71\n16.366666666666667\t0.61\n17.372222222222224\t0.57\n17.672222222222224\t0.51\n17.72222222222222\t0.53\n16.238888888888887\t0.61\n14.066666666666666\t0.71\n13.955555555555556\t0.76\n12.288888888888888\t0.8\n10.02222222222222\t0.86\n9.377777777777778\t0.86\n9.416666666666668\t0.9\n11.827777777777776\t0.92\n10.761111111111111\t0.91\n12.155555555555557\t0.95\n9.67222222222222\t0.94\n8.15\t0.94\n10.2\t0.95\n10.116666666666667\t0.99\n10.16111111111111\t0.99\n11.244444444444447\t0.98\n12.244444444444444\t0.99\n13.91111111111111\t0.92\n15.616666666666667\t0.82\n15.072222222222223\t0.86\n15.072222222222223\t0.82\n14.266666666666667\t0.87\n16.016666666666666\t0.81\n15.027777777777779\t0.86\n13.944444444444445\t0.89\n12.916666666666666\t0.95\n12.894444444444446\t0.95\n12.399999999999999\t0.98\n12.266666666666666\t0.99\n12.222222222222221\t0.96\n11.25\t0.96\n11.527777777777779\t0.96\n11.538888888888891\t0.96\n9.43888888888889\t0.96\n11.43888888888889\t0.96\n11.394444444444442\t0.96\n11.527777777777779\t0.96\n11.949999999999998\t0.93\n11.972222222222221\t1.0\n12.633333333333335\t0.96\n12.755555555555556\t0.96\n13.844444444444445\t0.9\n13.172222222222224\t0.94\n15.066666666666666\t0.86\n17.244444444444444\t0.75\n16.316666666666666\t0.76\n17.383333333333333\t0.74\n15.272222222222224\t0.76\n17.45555555555556\t0.72\n16.22222222222222\t0.77\n15.083333333333334\t0.82\n13.994444444444444\t0.88\n12.17222222222222\t0.92\n11.08888888888889\t0.95\n11.094444444444443\t0.95\n9.883333333333333\t0.96\n9.355555555555558\t0.96\n9.86111111111111\t0.96\n8.272222222222222\t0.99\n8.866666666666667\t0.96\n8.816666666666666\t0.96\n7.155555555555556\t1.0\n8.850000000000001\t0.99\n11.177777777777777\t0.93\n12.388888888888888\t0.98\n14.144444444444446\t0.88\n17.1\t0.72\n18.93888888888889\t0.64\n17.916666666666668\t0.68\n19.983333333333334\t0.53\n20.07222222222222\t0.62\n20.07222222222222\t0.56\n20.083333333333336\t0.58\n19.08888888888889\t0.63\n17.45\t0.62\n15.56666666666667\t0.74\n12.494444444444447\t0.91\n12.244444444444444\t0.89\n11.416666666666664\t0.92\n10.555555555555555\t0.95\n10.466666666666669\t0.93\n10.250000000000002\t0.95\n9.355555555555558\t0.96\n8.311111111111112\t0.96\n8.81111111111111\t0.96\n8.733333333333333\t0.93\n11.93333333333333\t0.93\n14.516666666666667\t0.84\n18.733333333333334\t0.68\n20.02777777777778\t0.6\n21.03888888888889\t0.55\n20.738888888888887\t0.46\n22.31666666666667\t0.48\n22.11111111111111\t0.5\n22.733333333333334\t0.38\n22.77777777777778\t0.37\n21.216666666666665\t0.41\n20.18333333333333\t0.45\n18.011111111111113\t0.68\n17.422222222222224\t0.65\n13.961111111111112\t0.82\n13.28888888888889\t0.89\n12.322222222222223\t0.89\n11.116666666666665\t0.95\n10.533333333333335\t0.95\n12.383333333333333\t0.8\n9.86111111111111\t0.96\n8.872222222222222\t0.95\n8.672222222222222\t0.94\n7.688888888888891\t1.0\n10.911111111111111\t0.99\n14.83888888888889\t0.82\n18.8\t0.65\n21.094444444444445\t0.49\n22.027777777777782\t0.49\n22.82777777777778\t0.47\n22.916666666666668\t0.37\n23.916666666666668\t0.37\n23.911111111111115\t0.4\n23.93333333333333\t0.37\n23.916666666666668\t0.32\n22.82222222222222\t0.44\n21.227777777777774\t0.48\n19.07777777777778\t0.51\n17.061111111111114\t0.63\n14.905555555555553\t0.72\n13.083333333333332\t0.87\n12.711111111111112\t0.89\n12.127777777777776\t0.89\n11.81111111111111\t0.84\n12.016666666666667\t0.8\n12.044444444444444\t0.8\n10.627777777777778\t0.86\n9.911111111111113\t0.99\n12.555555555555555\t0.9\n15.005555555555553\t0.78\n17.33888888888889\t0.74\n19.099999999999998\t0.67\n21.261111111111106\t0.57\n22.41111111111111\t0.54\n22.938888888888894\t0.5\n23.927777777777774\t0.47\n23.96111111111111\t0.47\n23.96111111111111\t0.38\n23.111111111111107\t0.42\n22.82222222222222\t0.44\n21.11111111111111\t0.47\n18.188888888888886\t0.58\n16.016666666666666\t0.72\n15.466666666666669\t0.72\n14.605555555555554\t0.76\n13.311111111111112\t0.82\n12.733333333333334\t0.83\n13.788888888888888\t0.77\n10.577777777777776\t0.88\n10.483333333333333\t0.92\n10.288888888888891\t0.91\n9.972222222222223\t0.92\n13.638888888888888\t0.9\n16.73888888888889\t0.74\n18.83888888888889\t0.65\n21.16111111111111\t0.59\n22.58888888888889\t0.53\n22.89444444444444\t0.48\n24.00555555555555\t0.47\n24.00555555555555\t0.35\n23.977777777777774\t0.44\n25.04444444444444\t0.32\n24.07777777777778\t0.35\n22.38333333333334\t0.45\n21.20555555555556\t0.52\n18.261111111111113\t0.62\n17.200000000000003\t0.67\n15.994444444444444\t0.75\n15.961111111111109\t0.79\n15.444444444444445\t0.72\n14.372222222222222\t0.75\n13.605555555555558\t0.9\n12.822222222222221\t0.82\n12.750000000000002\t0.83\n11.416666666666664\t0.92\n12.333333333333336\t0.86\n14.905555555555553\t0.78\n15.894444444444446\t0.74\n17.227777777777774\t0.72\n17.82777777777778\t0.73\n17.916666666666668\t0.72\n19.055555555555557\t0.67\n20.144444444444446\t0.67\n20.26111111111111\t0.62\n21.20555555555556\t0.62\n21.255555555555556\t0.67\n20.233333333333334\t0.66\n19.07777777777778\t0.71\n17.944444444444443\t0.77\n15.494444444444444\t0.82\n14.144444444444446\t0.89\n14.538888888888891\t0.86\n14.138888888888891\t0.86\n13.399999999999999\t0.9\n13.427777777777779\t0.9\n11.588888888888889\t0.74\n14.422222222222224\t0.83\n13.916666666666664\t0.86\n13.399999999999999\t0.9\n13.866666666666667\t0.9\n14.905555555555553\t0.84\n15.933333333333334\t0.74\n17.127777777777776\t0.65\n18.75\t0.58\n18.96111111111111\t0.6\n19.994444444444444\t0.54\n21.11111111111111\t0.5\n21.094444444444445\t0.46\n21.17777777777778\t0.43\n21.227777777777774\t0.41\n20.100000000000005\t0.45\n19.02777777777778\t0.51\n17.849999999999998\t0.59\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=22",
+              "$$hashKey": "object:3739"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128688_278059613",
+      "id": "paragraph_1752110828311_1378327746",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:349",
+      "dateFinished": "2025-07-10T01:49:35+0000",
+      "dateStarted": "2025-07-10T01:49:34+0000"
+    },
+    {
+      "text": "// Los daily summary mas comunes\r\nz.show(\r\n  dfClimaClean\r\n    .groupBy(\"Daily Summary\")\r\n    .count()\r\n    .orderBy(desc(\"count\"))\r\n    .limit(10)\r\n)",
+      "user": "anonymous",
+      "dateUpdated": "2025-07-10T01:52:46+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "anio": "string",
+                      "presion_prom": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "stacked": false
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "Daily Summary",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "count",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=43",
+              "$$hashKey": "object:6858"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=44",
+              "$$hashKey": "object:6859"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112128689_1883054388",
+      "id": "paragraph_1752110856046_1159831523",
+      "dateCreated": "2025-07-10T01:48:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:350",
+      "dateFinished": "2025-07-10T01:51:35+0000",
+      "dateStarted": "2025-07-10T01:51:35+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Daily Summary\tcount\nMostly cloudy throughout the day.\t20085\nPartly cloudy throughout the day.\t9981\nPartly cloudy until night.\t6169\nPartly cloudy starting in the morning.\t5184\nFoggy in the morning.\t4201\nFoggy starting overnight continuing until morning.\t3576\nPartly cloudy until evening.\t3288\nMostly cloudy until night.\t3095\nOvercast throughout the day.\t2952\nPartly cloudy starting in the morning continuing until evening.\t2806\n"
+          }
+        ]
+      }
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1752112400207_2108112549",
+      "id": "paragraph_1752112400207_2108112549",
+      "dateCreated": "2025-07-10T01:53:20+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:6877"
+    }
+  ],
+  "name": "examen",
+  "id": "2M24PDCGJ",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.11.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/examen"
+}
